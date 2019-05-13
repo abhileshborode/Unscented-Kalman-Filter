@@ -1,6 +1,6 @@
 # Unscented Kalman Filter 
 [//]: # (Image References)
-[image1]: ./images/ukf.png 
+[image1]: ./Images/ukf.png 
 
 
 In this project  we utilize an Unscented Kalman Filter to estimate the state position_x,position_y, velocity, yaw,yaw_rate of a moving object of interest with noisy lidar and radar measurements.
@@ -54,5 +54,18 @@ OUTPUT: values provided by the c++ program to the simulator
 2. Make a build directory: `mkdir build && cd build`
 3. Compile: `cmake .. && make`
 4. Run it: `./UnscentedKF`
+
+
+### Simulation 
+The image below is a screenshot from the simulator using the Unscented Kalman Filter from this project.
+![alt text][image1]
+
+## Discussion
+
+The Unscented Kalman Filter (UKF) estimates a state of an object when dealing with  non linear process and measurement models  which cannot be linearised  like in case of the Extended Kalman Filter. This is mainly due to the CTRV motion model used in the Unscented Kalman Filter, which is better able to model acceleration (change in direction). The CTRV motion model contains non-linear equations which the UKF can accomodate. The EKF used the a jacobian to create linear equations and we used only 1 mean point in case of EKF unlike UKF where we use multiple sigma points to model the distribution .
+
+
+
+
 
 
